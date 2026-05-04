@@ -244,7 +244,9 @@ async function check_vuln(version){
     show_scanning('../images/crawl_vuln.svg', 'Checking for Version Vulnerabilities...', '4');
     // var vuln_ver = version.split(".").join("");
     // var vuln_url = 'https://wpvulndb.com/api/v2/wordpresses/' + vuln_ver;
-    var vuln_url = `http://wpvulns.com/version/${version}.json`;
+	// FIXED: instead of wpvulndb use wpvulnerability.com database
+
+    var vuln_url = `https://www.wpvulnerability.net/core/${version}./`;
 	wpintel_debug('wpvuln url: ' + vuln_url);
     var f = await fetch(vuln_url);
 
